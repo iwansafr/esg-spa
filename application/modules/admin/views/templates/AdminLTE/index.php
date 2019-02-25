@@ -8,25 +8,8 @@
 </head>
 <body class="hold-transition skin-black sidebar-mini">
 <div class="wrapper">
-  <?php $this->load->view('header', array('user'=>$user)); ?>
-  <aside class="main-sidebar">
-    <?php $this->load->view('sidebar', array('user'=>$user));?>
-  </aside>
   <div class="content-wrapper">
-    <section class="content-header">
-      <?php $this->load->view('navigation') ?>
-    </section>
-    <section class="content">
-      <?php
-      // $content = $this->esg_model->esg_data['navigation']['string'];
-      // $content = $content == 'admin' ? 'home' : $content;
-      $mod['name'] = $this->router->fetch_class();
-      $mod['task'] = $this->router->fetch_method();
-      $content  = $mod['name'].'/'.$mod['task'];
-      $content = $content == 'admin/index' ? 'templates'.DIRECTORY_SEPARATOR.$admin_template.DIRECTORY_SEPARATOR.'home' :$content;
-      $this->load->view($content);
-      ?>
-    </section>
+
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
@@ -52,7 +35,6 @@
       </div>
       <div class="tab-pane active" id="control-sidebar-settings-tab">
         <form method="post">
-          <?php $this->load->view('config/templates') ?>
         </form>
       </div>
     </div>
